@@ -142,7 +142,7 @@ def movement_detection(str_to_print):
 def dbManagment(face,cursor,connection):
     resized2 = cv2.resize(face, (0, 0), fx=0.25, fy=0.25)
     rgb2 = cv2.cvtColor(resized2, cv2.COLOR_BGR2RGB)
-    face_locations2 = face_recognition.face_locations(rgb2)
+    face_locations2 = face_recognition.face_locations(rgb2,2)
     face_encodings2 = face_recognition.face_encodings(rgb2,face_locations2)
     cursor.execute("""SELECT * FROM faces""")
     faces=cursor.fetchall()
